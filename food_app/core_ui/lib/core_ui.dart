@@ -1,4 +1,4 @@
-library core;
+library core_ui;
 
 /// A Calculator.
 class Calculator {

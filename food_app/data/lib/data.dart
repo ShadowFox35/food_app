@@ -1,4 +1,4 @@
-library core;
+library data;
 
 /// A Calculator.
 class Calculator {
