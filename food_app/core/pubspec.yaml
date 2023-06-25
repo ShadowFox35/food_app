@@ -4,10 +4,13 @@ version: 0.0.1
 homepage:
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=2.19.6 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
+  firebase_core: ^2.14.0
+  firebase_auth: ^4.6.3
+  email_validator: ^2.1.17
   flutter:
     sdk: flutter
 
