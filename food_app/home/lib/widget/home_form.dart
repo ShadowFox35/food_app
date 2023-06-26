@@ -14,15 +14,25 @@ class HomeForm extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Row(
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       width: 65,
                       height: 65,
                       child: Placeholder(),
                     ),
                     SizedBox(
-                      child: Text('Tamang FoodService'),
-                    )
+                        child: Column(
+                      children: [
+                        Text(
+                          'Tamang',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                        Text(
+                          'FoodService',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ],
+                    ))
                   ],
                 ),
               ),
@@ -34,12 +44,17 @@ class HomeForm extends StatelessWidget {
               const SizedBox(
                 height: 41,
               ),
-              const Text('Welcome'),
+              Text(
+                'Welcome',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               const SizedBox(
                 height: 24,
               ),
-              const Text(
-                  'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!'),
+              Text(
+                'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
               const SizedBox(
                 height: 60,
               ),

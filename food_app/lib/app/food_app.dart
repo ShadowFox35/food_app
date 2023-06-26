@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:core_ui/core_ui.dart';
 import 'package:home/home.dart';
 
 class FoodApp extends StatelessWidget {
@@ -6,6 +8,6 @@ class FoodApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen());
+    return MaterialApp(theme: theme, home: const HomeScreen());
   }
 }
