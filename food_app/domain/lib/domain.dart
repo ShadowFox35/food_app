@@ -1,4 +1,4 @@
-library core;
+library domain;
 
 /// A Calculator.
 class Calculator {
