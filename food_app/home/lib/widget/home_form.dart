@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:core_ui/core_ui.dart';
 
 class HomeForm extends StatelessWidget {
   const HomeForm({super.key});
@@ -12,34 +13,34 @@ class HomeForm extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Expanded(
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 65,
-                      height: 65,
-                      child: Placeholder(),
-                    ),
-                    SizedBox(
-                        child: Column(
-                      children: [
-                        Text(
-                          'Tamang',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        Text(
-                          'FoodService',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ],
-                    ))
-                  ],
-                ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 65,
+                    height: 65,
+                    child: Image.asset(ImagePaths.logoImage),
+                  ),
+                  const SizedBox(width: 21),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Tamang',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      Text(
+                        'FoodService',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              const SizedBox(
+              const SizedBox(height: 33),
+              SizedBox(
                 width: 213,
                 height: 243,
-                child: Placeholder(),
+                child: Image.asset(ImagePaths.homeImage),
               ),
               const SizedBox(
                 height: 41,
@@ -54,6 +55,7 @@ class HomeForm extends StatelessWidget {
               Text(
                 'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!',
                 style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 60,
@@ -61,7 +63,7 @@ class HomeForm extends StatelessWidget {
               const SizedBox(
                 width: 335,
                 height: 48,
-                child: Placeholder(),
+                child: GeneralButton(),
               ),
             ],
           ),

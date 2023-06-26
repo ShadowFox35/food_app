@@ -1,3 +1,6 @@
 library core_ui;
 
-export 'theme/theme.dart';
+export 'design/app_images.dart';
+export 'design/theme.dart';
+
+export 'widgets/widgets.dart';
