@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
 import 'package:home/home.dart';
-import 'package:home/screen/menu_screen.dart';
 
 part 'app_router.gr.dart';
 
 @MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
+  replaceInRouteName: 'Screen,Route',
   routes: <AutoRoute>[
     AutoRoute(
-      path: '/',
       page: HomeScreen,
+      path: '/',
       initial: true,
     ),
     AutoRoute(
-      name: 'menu',
       page: MenuScreen,
-      // path: 'menu_screen/:id',
+      path: 'menu_screen',
     ),
   ],
 )

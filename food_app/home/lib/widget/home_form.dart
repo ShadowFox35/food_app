@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:auto_route/auto_route.dart';
 
 class HomeForm extends StatelessWidget {
   const HomeForm({super.key});
@@ -58,10 +59,15 @@ class HomeForm extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(
-                width: 335,
-                height: 48,
-                child: GeneralButton(),
+              GestureDetector(
+                onTap: () {
+                  AutoRouter.of(context).pushNamed('menu_screen');
+                },
+                child: const SizedBox(
+                  width: 335,
+                  height: 48,
+                  child: GeneralButton(),
+                ),
               ),
             ],
           ),
