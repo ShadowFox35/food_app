@@ -121,6 +121,26 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"
+    },
+    {
+      "name": "navigation",
+      "cwd": "navigation",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "navigation (profile mode)",
+      "cwd": "navigation",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "navigation (release mode)",
+      "cwd": "navigation",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
     }
   ]
 }
