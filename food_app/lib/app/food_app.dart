@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:core_ui/core_ui.dart';
-import 'package:home/home.dart';
 import 'package:navigation/navigation.dart';
 
 class FoodApp extends StatefulWidget {

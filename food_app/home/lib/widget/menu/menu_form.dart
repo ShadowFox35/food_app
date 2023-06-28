@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'menu_list.dart';
 // import 'package:core_ui/core_ui.dart';
 
 class MenuForm extends StatelessWidget {
@@ -7,9 +8,8 @@ class MenuForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Menu'),
-      ),
-    );
+        body: SafeArea(
+      child: MenuList(),
+    ));
   }
 }
