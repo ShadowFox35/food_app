@@ -4,14 +4,14 @@ import 'package:equatable/equatable.dart';
 import '../entities/menu_item_entity.dart';
 import '../repositories/menu_item_repository.dart';
 
-class GetMenuList extends IUseCase<List<MenuItemEntity>, PageParams> {
-  final MenuItemRepository menuItemRepository;
+class GetMenuList extends IUseCase<List<MenuItemEntity>, int> {
+  final IMenuItemRepository menuItemRepository;
 
   GetMenuList(this.menuItemRepository);
 
   @override
-  Future<List<MenuItemEntity>> call(PageParams params) async {
-    return await menuItemRepository.getMenuList(params.page);
+  Future<List<MenuItemEntity>> call(int page) async {
+    return await menuItemRepository.getMenuList(page);
   }
 }
 

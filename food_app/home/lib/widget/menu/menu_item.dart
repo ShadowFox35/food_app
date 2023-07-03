@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
-class MenuItem extends StatelessWidget {
-  const MenuItem({super.key});
+class MenuItem extends StatefulWidget {
+  final String _name;
+  final String _image;
+  final double _cost;
 
+  const MenuItem(this._name, this._image, this._cost, {super.key});
+
+  @override
+  State<MenuItem> createState() => _MenuItemState();
+}
+
+class _MenuItemState extends State<MenuItem> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +26,7 @@ class MenuItem extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Item Title',
+                widget._name,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               const Text(

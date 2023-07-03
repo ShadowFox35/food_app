@@ -1,24 +1,31 @@
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
 import 'menu_item.dart';
-// import 'package:core_ui/core_ui.dart';
 
-class MenuList extends StatelessWidget {
-  const MenuList({super.key});
+class MenuList extends StatefulWidget {
+  final List<MenuItemEntity> _itemModels;
+  const MenuList(this._itemModels, {super.key});
 
+  @override
+  State<StatefulWidget> createState() => _MenuListState();
+}
+
+class _MenuListState extends State<MenuList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
             padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
             child: ListView(
-              children: [
-                Center(
-                  child: MenuItem(
-                    key: key,
-                  ),
+              children: List.generate(
+                widget._itemModels.length,
+                (index) => MenuItem(
+                  widget._itemModels[index].name,
+                  widget._itemModels[index].image,
+                  widget._itemModels[index].cost,
                 ),
-              ],
+              ),
             )));
   }
 }
