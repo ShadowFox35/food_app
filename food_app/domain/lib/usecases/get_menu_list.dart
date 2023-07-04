@@ -1,25 +1,25 @@
 import 'package:domain/usecases/usecases.dart';
-import 'package:equatable/equatable.dart';
+// import 'package:equatable/equatable.dart';
 
 import '../entities/menu_item_entity.dart';
 import '../repositories/menu_item_repository.dart';
 
-class GetMenuList extends IUseCase<List<MenuItemEntity>, int> {
+class GetMenuListUseCase extends FutureUseCase<List<MenuItemEntity>, int> {
   final IMenuItemRepository menuItemRepository;
 
-  GetMenuList(this.menuItemRepository);
+  GetMenuListUseCase(this.menuItemRepository);
 
   @override
-  Future<List<MenuItemEntity>> call(int page) async {
-    return await menuItemRepository.getMenuList(page);
+  Future<List<MenuItemEntity>> execute(int input) async {
+    return await menuItemRepository.getMenuList(input);
   }
 }
 
-class PageParams extends Equatable {
-  final int page;
+// class PageParams extends Equatable {
+//   final int page;
 
-  const PageParams({required this.page});
+//   const PageParams({required this.page});
 
-  @override
-  List<Object> get props => [page];
-}
+//   @override
+//   List<Object> get props => [page];
+// }

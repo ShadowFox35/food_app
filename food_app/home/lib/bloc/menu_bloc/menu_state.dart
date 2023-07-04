@@ -8,7 +8,6 @@ class MenuStateLoading extends MenuState {}
 
 class MenuStateLoaded extends MenuState {
   final List<MenuItemEntity> menuListLoaded;
-  // final MenuItemModel menuListLoaded;
   MenuStateLoaded({required this.menuListLoaded});
 }
 

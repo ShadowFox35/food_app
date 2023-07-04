@@ -9,9 +9,8 @@ class MenuItemRepository implements IMenuItemRepository {
   MenuItemRepository(this._firebaseProvider);
 
   @override
-  Future<List<MenuItemModel>> getMenuList(int page) async {
-    final List<MenuItemEntity> result =
-        await _firebaseProvider.fetchMenuItems();
-    return result.map((MenuItemEntity e) => MenuItemMapper.toModel(e)).toList();
+  Future<List<MenuItemEntity>> getMenuList(int page) async {
+    final List<MenuItemModel> result = await _firebaseProvider.fetchMenuItems();
+    return result.map((MenuItemModel e) => MenuItemMapper.toEntity(e)).toList();
   }
 }

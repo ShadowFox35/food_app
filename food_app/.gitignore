@@ -31,6 +31,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+/data/lib/models/menu_item_model.freezed.dart
+/data/lib/models/menu_item_model.g.dart
 
 # Symbolication related
 app.*.symbols

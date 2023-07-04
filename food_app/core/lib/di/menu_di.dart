@@ -2,6 +2,7 @@ import 'package:data/data.dart';
 import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
 
+final GetIt appLocator = GetIt.instance;
 final MenuDI menuDI = MenuDI();
 
 class MenuDI {
@@ -11,17 +12,17 @@ class MenuDI {
   }
 
   void _initFirebase() {
-    GetIt.I.registerLazySingleton<FirebaseProvider>(
+    appLocator.registerLazySingleton<FirebaseProvider>(
       () => FirebaseProvider(),
     );
   }
 
   void _initDishes() {
-    GetIt.I.registerLazySingleton<MenuItemRepository>(
-        () => MenuItemRepository(GetIt.I.get<FirebaseProvider>()));
+    appLocator.registerLazySingleton<MenuItemRepository>(
+        () => MenuItemRepository(appLocator.get<FirebaseProvider>()));
 
-    GetIt.I.registerLazySingleton<GetMenuList>(
-      () => GetMenuList(GetIt.I.get<MenuItemRepository>()),
+    appLocator.registerLazySingleton<GetMenuListUseCase>(
+      () => GetMenuListUseCase(appLocator.get<MenuItemRepository>()),
     );
   }
 }

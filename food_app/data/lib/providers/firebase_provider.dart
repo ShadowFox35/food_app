@@ -18,13 +18,7 @@ class FirebaseProvider {
         .toList();
 
     for (var fbItem in fbMenu) {
-      menuItems.add(MenuItemModel(
-        image: fbItem['image'] as String,
-        name: fbItem['name'] as String,
-        type: fbItem['type'] as String,
-        ingredients: fbItem['ingredients'] as String,
-        cost: (fbItem['cost'] as num).toDouble(),
-      ));
+      menuItems.add(MenuItemModel.fromJson(fbItem.data()));
     }
   }
 }

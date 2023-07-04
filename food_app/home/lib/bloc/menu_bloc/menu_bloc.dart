@@ -5,17 +5,19 @@ part 'menu_state.dart';
 part 'menu_event.dart';
 
 class MenuBloc extends Bloc<MenuEvent, MenuState> {
-  final GetMenuList _fetchDishesUsecase;
+  final GetMenuListUseCase _getMenuListUsecase;
 
-  MenuBloc(this._fetchDishesUsecase) : super(MenuStateInitial()) {
+  MenuBloc(this._getMenuListUsecase) : super(MenuStateInitial()) {
     on<LoadMenuList>(_getMenu);
+
+    add(LoadMenuList(0));
   }
 
   void _getMenu<LoadMenuList>(event, emit) async {
     emit(MenuStateLoading());
     try {
       emit(MenuStateLoaded(
-          menuListLoaded: await _fetchDishesUsecase.call(event.page)));
+          menuListLoaded: await _getMenuListUsecase.execute(event.page)));
     } catch (e) {
       emit(MenuStateFail(errorMessage: e.toString()));
     }

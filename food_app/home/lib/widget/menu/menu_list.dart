@@ -1,3 +1,4 @@
+import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
@@ -15,17 +16,22 @@ class _MenuListState extends State<MenuList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-            padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-            child: ListView(
-              children: List.generate(
-                widget._itemModels.length,
-                (index) => MenuItem(
-                  widget._itemModels[index].name,
-                  widget._itemModels[index].image,
-                  widget._itemModels[index].cost,
-                ),
-              ),
-            )));
+      body: Container(
+          padding: const EdgeInsets.all(AppDimens.padding_25),
+          child: ListView.separated(
+            itemCount: widget._itemModels.length,
+            itemBuilder: (BuildContext context, int index) {
+              return MenuItem(
+                name: widget._itemModels[index].name,
+                ingredients: widget._itemModels[index].ingredients,
+                image: widget._itemModels[index].image,
+                cost: widget._itemModels[index].cost,
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) {
+              return const Divider(height: AppDimens.padding_40); // Разделитель
+            },
+          )),
+    );
   }
 }

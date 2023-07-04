@@ -1,22 +1,18 @@
-import 'package:domain/domain.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class MenuItemModel extends MenuItemEntity {
-  final String image;
-  final String name;
-  final String type;
-  final String ingredients;
-  final double cost;
+part 'menu_item_model.freezed.dart';
+part 'menu_item_model.g.dart';
 
-  const MenuItemModel(
-      {required this.image,
-      required this.name,
-      required this.type,
-      required this.ingredients,
-      required this.cost})
-      : super(
-            image: image,
-            name: name,
-            type: type,
-            ingredients: ingredients,
-            cost: cost);
+@freezed
+class MenuItemModel with _$MenuItemModel {
+  factory MenuItemModel({
+    required String image,
+    required String name,
+    required String type,
+    required String ingredients,
+    required double cost,
+  }) = _MenuItemModel;
+
+  factory MenuItemModel.fromJson(Map<String, dynamic> json) =>
+      _$MenuItemModelFromJson(json);
 }

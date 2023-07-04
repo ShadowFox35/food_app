@@ -10,19 +10,20 @@ class HomeForm extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          padding: const EdgeInsets.fromLTRB(24, 80, 24, 80),
+          padding: const EdgeInsets.symmetric(
+              vertical: AppDimens.padding_80, horizontal: AppDimens.padding_25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Row(
                 children: [
                   SizedBox(
-                    width: 65,
-                    height: 65,
+                    width: AppDimens.size_65,
+                    height: AppDimens.size_65,
                     child: Image.asset(ImagePaths.logoImage),
                   ),
                   Container(
-                    margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    margin: const EdgeInsets.only(left: AppDimens.padding_20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -40,10 +41,12 @@ class HomeForm extends StatelessWidget {
                 ],
               ),
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 35, 0, 40),
+                margin: const EdgeInsets.symmetric(
+                  vertical: AppDimens.padding_40,
+                ),
                 child: SizedBox(
-                  width: 215,
-                  height: 245,
+                  width: AppDimens.size_215,
+                  height: AppDimens.size_245,
                   child: Image.asset(ImagePaths.homeImage),
                 ),
               ),
@@ -52,7 +55,8 @@ class HomeForm extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 25, 0, 60),
+                margin: const EdgeInsets.only(
+                    top: AppDimens.padding_25, bottom: AppDimens.padding_60),
                 child: Text(
                   'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!',
                   style: Theme.of(context).textTheme.bodyMedium,
@@ -64,8 +68,8 @@ class HomeForm extends StatelessWidget {
                   AutoRouter.of(context).pushNamed('menu_screen');
                 },
                 child: const SizedBox(
-                  width: 335,
-                  height: 48,
+                  width: AppDimens.size_335,
+                  height: AppDimens.size_50,
                   child: GeneralButton(),
                 ),
               ),
