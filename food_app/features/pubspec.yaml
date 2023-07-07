@@ -1,4 +1,4 @@
-name: home
+name: features
 description: A new Flutter package project.
 publish_to: "none"
 version: 0.0.1
@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
 
   auto_route: ^5.0.4
-  
+
   core:
     path: ../core
   core_ui:
@@ -30,9 +30,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 # The following section is specific to Flutter packages.
 flutter:
-# # assets:
-# #   - packages/core_ui/assets/images/
-fonts:
-  - family: Poppins
-    fonts:
-      - asset: fonts/Poppins-Regular.ttf
+  uses-material-design: true
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: ../fonts/Poppins-Regular.ttf

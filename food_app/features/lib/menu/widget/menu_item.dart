@@ -41,34 +41,41 @@ class _MenuItemState extends State<MenuItem> {
               children: [
                 Text(
                   widget.name,
-                  style: Theme.of(context).textTheme.titleSmall,
+                  style: AppFonts.normal_18,
                 ),
                 Text(
                   widget.ingredients,
                   softWrap: true,
+                  style: AppFonts.normal_16,
                 ),
-                Row(
-                  children: <Widget>[
-                    Text('${widget.cost}'),
-                    SizedBox(
-                        width: AppDimens.size_40,
-                        height: AppDimens.size_40,
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                              top: AppDimens.padding_10,
-                              left: AppDimens.padding_10),
-                          child: ElevatedButton(
-                            onPressed: null,
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: const Icon(
-                              Icons.add,
-                              size: AppDimens.size_20,
-                            ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: AppDimens.padding_10,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        '${widget.cost}',
+                        style: AppFonts.normal_14,
+                      ),
+                      Container(
+                        width: AppDimens.size_30,
+                        height: AppDimens.size_30,
+                        margin:
+                            const EdgeInsets.only(left: AppDimens.padding_10),
+                        child: ElevatedButton(
+                          onPressed: null,
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.zero,
                           ),
-                        )),
-                  ],
+                          child: const Icon(
+                            Icons.add,
+                            size: AppDimens.size_20,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

@@ -2,11 +2,12 @@ class AppDimens {
   static const double padding_10 = 10.0;
   static const double padding_20 = 20.0;
   static const double padding_25 = 25.0;
+  static const double padding_30 = 30.0;
   static const double padding_40 = 40.0;
   static const double padding_60 = 60.0;
-  static const double padding_80 = 80.0;
 
   static const double size_20 = 20.0;
+  static const double size_30 = 30.0;
   static const double size_40 = 40.0;
   static const double size_50 = 50.0;
   static const double size_65 = 65.0;

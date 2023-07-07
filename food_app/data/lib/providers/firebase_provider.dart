@@ -2,17 +2,14 @@ import 'package:core/core.dart';
 import 'package:data/models/menu_item_model.dart';
 
 class FirebaseProvider {
-  late final List<MenuItemModel> menuItems = [];
 
   Future<List<MenuItemModel>> fetchMenuItems() async {
-    if (menuItems.isEmpty) {
-      await _getMenuItems();
-    }
-
-    return menuItems;
+     return await _getMenuItems();
   }
 
-  Future<void> _getMenuItems() async {
+  Future<List<MenuItemModel>> _getMenuItems() async {
+      late final List<MenuItemModel> menuItems = [];
+
     final fbMenu = (await FirebaseFirestore.instance.collection('menu').get())
         .docs
         .toList();
@@ -20,5 +17,6 @@ class FirebaseProvider {
     for (var fbItem in fbMenu) {
       menuItems.add(MenuItemModel.fromJson(fbItem.data()));
     }
+    return menuItems;
   }
 }

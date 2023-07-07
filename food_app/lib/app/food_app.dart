@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:core_ui/core_ui.dart';
 import 'package:navigation/navigation.dart';
 
 class FoodApp extends StatefulWidget {
@@ -16,7 +15,6 @@ class _FoodAppState extends State<FoodApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: theme,
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
     );

@@ -1,4 +1,6 @@
+import 'package:core_ui/design/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:core_ui/core_ui.dart';
 
 class GeneralButton extends StatelessWidget {
   const GeneralButton({super.key});
@@ -6,11 +8,11 @@ class GeneralButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(238, 167, 52, 1),
+      backgroundColor: AppColors.orange,
       body: Center(
         child: Text(
           'Get Started'.toUpperCase(),
-          style: Theme.of(context).textTheme.labelLarge,
+          style: AppFonts.buttons_14,
         ),
       ),
     );

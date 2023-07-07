@@ -31,8 +31,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-/data/lib/models/menu_item_model.freezed.dart
-/data/lib/models/menu_item_model.g.dart
+
 
 # Symbolication related
 app.*.symbols
@@ -44,3 +43,16 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Custom
+*.lock
+ios/build
+android/app/build
+**/*.g.dart
+**/*.freezed.dart
+**/*.graphql.dart
+**/*.gr.dart
+**/build
+**/coverage
+/android/
+/ios/

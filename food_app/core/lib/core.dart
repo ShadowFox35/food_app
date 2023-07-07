@@ -5,4 +5,4 @@ export 'package:get_it/get_it.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 
-export 'package:core/di/menu_di.dart';
+export 'package:core/di/app_di.dart';

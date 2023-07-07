@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home/bloc/menu_bloc/menu_bloc.dart';
+import 'package:features/menu/bloc/menu_bloc.dart';
 import 'menu_list.dart';
 import 'package:core/core.dart';
 import 'package:domain/domain.dart';
@@ -11,14 +11,14 @@ class MenuForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<MenuBloc>(
       create: (BuildContext context) => MenuBloc(
-        appLocator.get<GetMenuListUseCase>(),
+        getMenuListUsecase: appLocator.get<GetMenuListUseCase>(),
       ),
       child: BlocBuilder<MenuBloc, MenuState>(
         builder: (BuildContext context, MenuState state) {
-          if (state is MenuStateFail) {}
-          if (state is MenuStateLoaded) {
+          if (state.error != null) {}
+          if (!state.isLoading) {
             return Scaffold(
-              body: SafeArea(child: MenuList(state.menuListLoaded)),
+              body: SafeArea(child: MenuList(state.dishesList)),
             );
           }
           return const Center(child: CircularProgressIndicator());

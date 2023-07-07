@@ -1,6 +1,6 @@
 part of 'menu_bloc.dart';
 
-class MenuEvent {}
+abstract class MenuEvent {}
 
 class LoadMenuList extends MenuEvent {
   final int page;
