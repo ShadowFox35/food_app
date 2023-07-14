@@ -16,6 +16,13 @@ class AppFonts {
     color: Colors.black,
   );
 
+  static const normal_20 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
+
   static const normal_18 = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 18,
@@ -28,7 +35,6 @@ class AppFonts {
     fontFamily: 'Poppins',
     fontSize: 16,
     fontWeight: FontWeight.w300,
-    // letterSpacing: 0.7,
     color: Color.fromARGB(255, 58, 58, 58),
   );
 

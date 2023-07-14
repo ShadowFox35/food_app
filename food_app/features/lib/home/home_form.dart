@@ -73,11 +73,7 @@ class HomeForm extends StatelessWidget {
                   onTap: () {
                     AutoRouter.of(context).pushNamed('menu_screen');
                   },
-                  child: const SizedBox(
-                    width: AppDimens.size_335,
-                    height: AppDimens.size_50,
-                    child: GeneralButton(),
-                  ),
+                  child: const GeneralButton(),
                 ),
               ],
             ),

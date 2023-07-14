@@ -29,6 +29,12 @@ class _$AppRouter extends RootStackRouter {
         child: const MenuScreen(),
       );
     },
+    DishRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const DishScreen(),
+      );
+    },
   };
 
   @override
@@ -40,6 +46,10 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           MenuRoute.name,
           path: 'menu_screen',
+        ),
+        RouteConfig(
+          DishRoute.name,
+          path: 'dish_screen',
         ),
       ];
 }
@@ -66,4 +76,16 @@ class MenuRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'MenuRoute';
+}
+
+/// generated route for
+/// [DishScreen]
+class DishRoute extends PageRouteInfo<void> {
+  const DishRoute()
+      : super(
+          DishRoute.name,
+          path: 'dish_screen',
+        );
+
+  static const String name = 'DishRoute';
 }

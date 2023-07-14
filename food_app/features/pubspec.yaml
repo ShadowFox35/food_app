@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   auto_route: ^5.0.4
 
   core:
@@ -28,7 +27,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-# The following section is specific to Flutter packages.
+
 flutter:
   uses-material-design: true
   fonts:

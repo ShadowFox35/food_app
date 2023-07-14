@@ -17,7 +17,10 @@ part 'app_router.gr.dart';
       page: MenuScreen,
       path: 'menu_screen',
     ),
+    AutoRoute(
+      page: DishScreen,
+      path: 'dish_screen',
+    ),
   ],
 )
-// extend the generated private router
 class AppRouter extends _$AppRouter {}

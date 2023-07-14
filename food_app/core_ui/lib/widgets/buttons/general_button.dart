@@ -7,9 +7,14 @@ class GeneralButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.orange,
-      body: Center(
+    return Container(
+      width: AppDimens.size_335,
+      height: AppDimens.size_50,
+      decoration: BoxDecoration(
+        color: AppColors.orange,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Center(
         child: Text(
           'Get Started'.toUpperCase(),
           style: AppFonts.buttons_14,
