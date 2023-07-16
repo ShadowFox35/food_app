@@ -24,7 +24,9 @@ class _MenuListState extends State<MenuList> {
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                AutoRouter.of(context).pushNamed('dish_screen');
+                AutoRouter.of(context).push(
+                  DishRoute(model: widget._itemModels[index]),
+                );
               },
               child: MenuItem(
                 name: widget._itemModels[index].name,

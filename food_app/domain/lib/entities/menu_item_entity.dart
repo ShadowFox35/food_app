@@ -5,6 +5,7 @@ class MenuItemEntity extends Equatable {
   final String name;
   final String type;
   final String ingredients;
+  final String details;
   final double cost;
 
   const MenuItemEntity({
@@ -12,6 +13,7 @@ class MenuItemEntity extends Equatable {
     required this.name,
     required this.type,
     required this.ingredients,
+    required this.details,
     required this.cost,
   });
 

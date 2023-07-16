@@ -30,9 +30,13 @@ class _$AppRouter extends RootStackRouter {
       );
     },
     DishRoute.name: (routeData) {
+      final args = routeData.argsAs<DishRouteArgs>();
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const DishScreen(),
+        child: DishScreen(
+          key: args.key,
+          model: args.model,
+        ),
       );
     },
   };
@@ -80,12 +84,34 @@ class MenuRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [DishScreen]
-class DishRoute extends PageRouteInfo<void> {
-  const DishRoute()
-      : super(
+class DishRoute extends PageRouteInfo<DishRouteArgs> {
+  DishRoute({
+    Key? key,
+    required MenuItemEntity model,
+  }) : super(
           DishRoute.name,
           path: 'dish_screen',
+          args: DishRouteArgs(
+            key: key,
+            model: model,
+          ),
         );
 
   static const String name = 'DishRoute';
+}
+
+class DishRouteArgs {
+  const DishRouteArgs({
+    this.key,
+    required this.model,
+  });
+
+  final Key? key;
+
+  final MenuItemEntity model;
+
+  @override
+  String toString() {
+    return 'DishRouteArgs{key: $key, model: $model}';
+  }
 }

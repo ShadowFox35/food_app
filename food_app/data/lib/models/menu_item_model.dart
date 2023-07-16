@@ -10,6 +10,7 @@ class MenuItemModel with _$MenuItemModel {
     required String name,
     required String type,
     required String ingredients,
+    required String details,
     required double cost,
   }) = _MenuItemModel;
 

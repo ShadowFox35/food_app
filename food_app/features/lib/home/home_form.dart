@@ -12,7 +12,7 @@ class HomeForm extends StatelessWidget {
         child: Center(
           child: Container(
             padding: const EdgeInsets.symmetric(
-                vertical: AppDimens.padding_60,
+                vertical: AppDimens.padding_20,
                 horizontal: AppDimens.padding_25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
