@@ -7,5 +7,6 @@ export 'design/app_images.dart';
 export 'design/app_dimens.dart';
 export 'design/app_fonts.dart';
 export 'design/app_colors.dart';
+export 'design/app_constants.dart';
 
 export 'widgets/widgets.dart';

@@ -16,7 +16,7 @@ class AddButton extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'Add to Cart'.toUpperCase(),
+          AppConstants.addToCart.toUpperCase(),
           style: GoogleFonts.poppins(textStyle: AppFonts.buttons_14)
               .copyWith(color: AppColors.white),
         ),

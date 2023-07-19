@@ -69,7 +69,7 @@ class DishScreen extends StatelessWidget {
                     Container(
                       margin: const EdgeInsets.only(top: AppDimens.padding_10),
                       child: Text(
-                        'Ingredients:',
+                        AppConstants.ingredients,
                         style:
                             GoogleFonts.poppins(textStyle: AppFonts.normal_18)
                                 .copyWith(color: AppColors.darkGrey),

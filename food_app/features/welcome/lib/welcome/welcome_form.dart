@@ -32,7 +32,7 @@ class WelcomeForm extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Tamang FoodService',
+                              AppConstants.logoTitle,
                               style: GoogleFonts.poppins(
                                       textStyle: AppFonts.bold_37)
                                   .copyWith(color: AppColors.black),
@@ -56,14 +56,14 @@ class WelcomeForm extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Welcome',
+                  AppConstants.welcome,
                   style: GoogleFonts.poppins(textStyle: AppFonts.bold_28)
                       .copyWith(color: AppColors.black),
                 ),
                 Container(
                   margin: const EdgeInsets.all(AppDimens.padding_25),
                   child: Text(
-                    'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!',
+                    AppConstants.welcomeMessage,
                     style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
                         .copyWith(color: AppColors.darkGrey),
                     textAlign: TextAlign.center,

@@ -15,7 +15,7 @@ class GeneralButton extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'Get Started'.toUpperCase(),
+          AppConstants.getStarted.toUpperCase(),
           style: GoogleFonts.poppins(textStyle: AppFonts.buttons_14)
               .copyWith(color: AppColors.white),
         ),

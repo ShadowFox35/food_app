@@ -7,7 +7,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Settings',
+      child: Text(AppConstants.settingsTitle,
           style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)
               .copyWith(color: AppColors.darkGrey)),
     );
