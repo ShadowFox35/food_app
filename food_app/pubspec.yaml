@@ -1,7 +1,6 @@
 name: food_app
 description: A new Flutter project.
 publish_to: "none"
-
 version: 1.0.0+1
 
 environment:
@@ -12,10 +11,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
-  features:
-    path: ./features
   navigation:
     path: ./navigation
+  welcome:
+    path: ./features/welcome
   data:
     path: ./data
   core:
@@ -33,7 +32,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: fonts/Poppins-Regular.ttf
+flutter_intl:
+  enabled: true

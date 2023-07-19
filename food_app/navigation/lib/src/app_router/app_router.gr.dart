@@ -17,10 +17,16 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) {
+    WelcomeRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const HomeScreen(),
+        child: const WelcomeScreen(),
+      );
+    },
+    SettingsRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const SettingsScreen(),
       );
     },
     MenuRoute.name: (routeData) {
@@ -44,30 +50,52 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(
-          HomeRoute.name,
+          '/#redirect',
           path: '/',
+          redirectTo: 'welcome',
+          fullMatch: true,
+        ),
+        RouteConfig(
+          WelcomeRoute.name,
+          path: 'welcome',
+        ),
+        RouteConfig(
+          SettingsRoute.name,
+          path: 'settings',
         ),
         RouteConfig(
           MenuRoute.name,
-          path: 'menu_screen',
+          path: 'menu',
         ),
         RouteConfig(
           DishRoute.name,
-          path: 'dish_screen',
+          path: 'dish',
         ),
       ];
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
+/// [WelcomeScreen]
+class WelcomeRoute extends PageRouteInfo<void> {
+  const WelcomeRoute()
       : super(
-          HomeRoute.name,
-          path: '/',
+          WelcomeRoute.name,
+          path: 'welcome',
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'WelcomeRoute';
+}
+
+/// generated route for
+/// [SettingsScreen]
+class SettingsRoute extends PageRouteInfo<void> {
+  const SettingsRoute()
+      : super(
+          SettingsRoute.name,
+          path: 'settings',
+        );
+
+  static const String name = 'SettingsRoute';
 }
 
 /// generated route for
@@ -76,7 +104,7 @@ class MenuRoute extends PageRouteInfo<void> {
   const MenuRoute()
       : super(
           MenuRoute.name,
-          path: 'menu_screen',
+          path: 'menu',
         );
 
   static const String name = 'MenuRoute';
@@ -90,7 +118,7 @@ class DishRoute extends PageRouteInfo<DishRouteArgs> {
     required MenuItemEntity model,
   }) : super(
           DishRoute.name,
-          path: 'dish_screen',
+          path: 'dish',
           args: DishRouteArgs(
             key: key,
             model: model,

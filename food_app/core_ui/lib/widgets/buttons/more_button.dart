@@ -1,8 +1,6 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
-import 'package:core_ui/design/app_colors.dart';
-
 class MoreButton extends StatelessWidget {
   const MoreButton({super.key});
 

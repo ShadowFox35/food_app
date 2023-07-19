@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:core_ui/core_ui.dart';
-import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:navigation/navigation.dart';
 
-class HomeForm extends StatelessWidget {
-  const HomeForm({super.key});
+class WelcomeForm extends StatelessWidget {
+  const WelcomeForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +30,15 @@ class HomeForm extends StatelessWidget {
                             const EdgeInsets.only(left: AppDimens.padding_20),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
                               'Tamang FoodService',
-                              style: AppFonts.bold_37,
+                              style: GoogleFonts.poppins(
+                                      textStyle: AppFonts.bold_37)
+                                  .copyWith(color: AppColors.black),
                               softWrap: true,
                               textAlign: TextAlign.center,
                             ),
-                            // Text(
-                            //   'FoodService',
-                            //   style: AppFonts.bold_37,
-                            // ),
                           ],
                         ),
                       ),
@@ -57,21 +55,23 @@ class HomeForm extends StatelessWidget {
                     child: Image.asset(ImagePaths.homeImage),
                   ),
                 ),
-                const Text(
+                Text(
                   'Welcome',
-                  style: AppFonts.bold_28,
+                  style: GoogleFonts.poppins(textStyle: AppFonts.bold_28)
+                      .copyWith(color: AppColors.black),
                 ),
                 Container(
                   margin: const EdgeInsets.all(AppDimens.padding_25),
-                  child: const Text(
+                  child: Text(
                     'It’s a pleasure to meet you. We are excited that you’re here so let’s get started!',
-                    style: AppFonts.normal_16,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
+                        .copyWith(color: AppColors.darkGrey),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    AutoRouter.of(context).pushNamed('menu_screen');
+                    AutoRouter.of(context).push(const MenuRoute());
                   },
                   child: const GeneralButton(),
                 ),

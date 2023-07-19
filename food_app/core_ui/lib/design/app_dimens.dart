@@ -18,4 +18,5 @@ class AppDimens {
   static const double size_335 = 335.0;
 
   static const double radius_10 = 10.0;
+  static const double radius_20 = 20.0;
 }

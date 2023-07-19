@@ -58,23 +58,28 @@ class DishScreen extends StatelessWidget {
                   children: [
                     Text(
                       _model.name,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
+                          .copyWith(color: AppColors.black),
                     ),
                     Text(
                       _model.details,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
+                          .copyWith(color: AppColors.darkGrey),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: AppDimens.padding_10),
                       child: Text(
                         'Ingredients:',
                         style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_18),
+                            GoogleFonts.poppins(textStyle: AppFonts.normal_18)
+                                .copyWith(color: AppColors.darkGrey),
                       ),
                     ),
-                    Text(_model.ingredients,
-                        style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_16)),
+                    Text(
+                      _model.ingredients,
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
+                          .copyWith(color: AppColors.darkGrey),
+                    ),
                   ]),
             ),
             const DishCounter(),
@@ -84,7 +89,7 @@ class DishScreen extends StatelessWidget {
                 '${_model.cost.toString()} \$',
                 style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
                     .copyWith(color: AppColors.orange),
-                textAlign: TextAlign.center, // Aligns the text to the center.
+                textAlign: TextAlign.center,
               ),
             ),
             const Align(child: AddButton()),

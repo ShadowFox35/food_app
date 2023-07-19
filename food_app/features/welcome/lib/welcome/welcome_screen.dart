@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:features/home/home_form.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import 'welcome_form.dart';
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const HomeForm();
+    return const WelcomeForm();
   }
 }
