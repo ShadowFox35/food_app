@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation/navigation.dart';
 
 import 'widget/dish_counter.dart';
 
@@ -58,27 +58,23 @@ class DishScreen extends StatelessWidget {
                   children: [
                     Text(
                       _model.name,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
-                          .copyWith(color: AppColors.black),
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
                     ),
                     Text(
                       _model.details,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                          .copyWith(color: AppColors.darkGrey),
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: AppDimens.padding_10),
                       child: Text(
                         AppConstants.ingredients,
                         style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_18)
-                                .copyWith(color: AppColors.darkGrey),
+                            GoogleFonts.poppins(textStyle: AppFonts.normal_18),
                       ),
                     ),
                     Text(
                       _model.ingredients,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                          .copyWith(color: AppColors.darkGrey),
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                     ),
                   ]),
             ),
@@ -92,7 +88,13 @@ class DishScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            const Align(child: AddButton()),
+            Align(
+                child: GestureDetector(
+              onTap: () {
+                AutoRouter.of(context).push(const SettingsRoute());
+              },
+              child: const AddButton(),
+            )),
           ],
         ),
       ),

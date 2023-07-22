@@ -13,18 +13,19 @@ class DishCounter extends StatelessWidget {
         children: [
           Container(
               margin: const EdgeInsets.only(right: AppDimens.padding_20),
-              height: 55,
-              width: 55,
+              height: AppDimens.size_55,
+              width: AppDimens.size_55,
               child: const LessButton()),
           Text(
             '01',
-            style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
-                .copyWith(color: AppColors.black),
+            style: GoogleFonts.poppins(
+                textStyle: AppFonts.normal_20,
+                color: Theme.of(context).primaryColor),
           ),
           Container(
             margin: const EdgeInsets.only(left: AppDimens.padding_20),
-            height: 55,
-            width: 55,
+            height: AppDimens.size_55,
+            width: AppDimens.size_55,
             child: const MoreButton(),
           ),
         ],
