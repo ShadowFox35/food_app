@@ -1,6 +1,7 @@
 import 'package:core/config/firebase_options.dart';
 import 'package:core/core.dart';
 import 'package:data/data.dart';
+import 'package:navigation/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/app/food_app.dart';
 
@@ -9,7 +10,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  await menuDI.initDependencies();
+  await Hive.initFlutter();
+  await dataDI.initDependencies();
+  await appLocator<HiveProvider>().openBoxes();
+  initNavigationDependencies();
   runApp(const FoodApp());
 }

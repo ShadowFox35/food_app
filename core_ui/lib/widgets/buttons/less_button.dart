@@ -1,5 +1,4 @@
 import 'package:core_ui/core_ui.dart';
-
 import 'package:flutter/material.dart';
 
 class LessButton extends StatelessWidget {
@@ -10,15 +9,20 @@ class LessButton extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: AppColors.lightGrey,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(AppDimens.radius_30),
           border: Border.all(
-            color: AppColors.grey,
+            color: Theme.of(context).primaryColor,
             width: 1.0,
           ),
         ),
         child: Center(
-          child: SvgPicture.asset(ImagePaths.minusIcon),
+          child: SvgPicture.asset(
+            ImagePaths.minusIcon,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).primaryColor,
+              BlendMode.srcIn,
+            ),
+          ),
         ),
       ),
     );

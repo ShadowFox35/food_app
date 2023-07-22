@@ -11,7 +11,7 @@ class AddButton extends StatelessWidget {
       height: AppDimens.size_50,
       margin: const EdgeInsets.only(bottom: AppDimens.padding_60),
       decoration: BoxDecoration(
-        color: AppColors.orange,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(

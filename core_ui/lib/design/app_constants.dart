@@ -7,6 +7,7 @@ class AppConstants {
   static const String ingredients = 'Ingredients:';
 
   static const String settingsTitle = 'Settings';
+  static const String themeOption = 'Dark Theme';
 
   static const String getStarted = 'Get Started';
   static const String addToCart = 'Add to Cart';

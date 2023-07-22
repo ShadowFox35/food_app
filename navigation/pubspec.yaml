@@ -22,6 +22,8 @@ dependencies:
   settings:
     path: ../features/settings
 
+  core:
+    path: ../core
   core_ui:
     path: ../core_ui
   domain:
