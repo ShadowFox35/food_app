@@ -21,6 +21,10 @@ dependencies:
     path: ../features/dish
   settings:
     path: ../features/settings
+  cart:
+    path: ../features/cart
+  order_history:
+    path: ../features/order_history
 
   core_ui:
     path: ../core_ui
