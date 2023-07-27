@@ -10,7 +10,7 @@ class GeneralButton extends StatelessWidget {
       width: AppDimens.size_335,
       height: AppDimens.size_50,
       decoration: BoxDecoration(
-        color: AppColors.orange,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Center(

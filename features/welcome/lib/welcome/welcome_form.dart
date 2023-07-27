@@ -22,7 +22,9 @@ class WelcomeForm extends StatelessWidget {
                     SizedBox(
                       width: AppDimens.size_65,
                       height: AppDimens.size_65,
-                      child: Image.asset(ImagePaths.logoImage),
+                      child: SvgPicture.asset(
+                        ImagePaths.logoImage,
+                      ),
                     ),
                     Expanded(
                       child: Container(
@@ -34,8 +36,7 @@ class WelcomeForm extends StatelessWidget {
                             Text(
                               AppConstants.logoTitle,
                               style: GoogleFonts.poppins(
-                                      textStyle: AppFonts.bold_37)
-                                  .copyWith(color: AppColors.black),
+                                  textStyle: AppFonts.bold_37),
                               softWrap: true,
                               textAlign: TextAlign.center,
                             ),
@@ -47,25 +48,25 @@ class WelcomeForm extends StatelessWidget {
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(
-                    vertical: AppDimens.padding_40,
+                    vertical: AppDimens.padding_20,
                   ),
                   child: SizedBox(
-                    width: AppDimens.size_215,
-                    height: AppDimens.size_245,
-                    child: Image.asset(ImagePaths.homeImage),
+                    width: AppDimens.size_280,
+                    height: AppDimens.size_280,
+                    child: SvgPicture.asset(
+                      ImagePaths.homeImage,
+                    ),
                   ),
                 ),
                 Text(
                   AppConstants.welcome,
-                  style: GoogleFonts.poppins(textStyle: AppFonts.bold_28)
-                      .copyWith(color: AppColors.black),
+                  style: GoogleFonts.poppins(textStyle: AppFonts.bold_28),
                 ),
                 Container(
                   margin: const EdgeInsets.all(AppDimens.padding_25),
                   child: Text(
                     AppConstants.welcomeMessage,
-                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                        .copyWith(color: AppColors.darkGrey),
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                     textAlign: TextAlign.center,
                   ),
                 ),

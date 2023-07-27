@@ -22,7 +22,11 @@ class MenuForm extends StatelessWidget {
               body: SafeArea(child: MenuList(state.dishesList)),
             );
           }
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+              child: CircularProgressIndicator(
+            valueColor:
+                AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+          ));
         },
       ),
     );

@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  auto_route: ^5.0.4
 
   core:
     path: ../../core

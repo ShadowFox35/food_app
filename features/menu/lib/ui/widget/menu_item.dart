@@ -42,13 +42,13 @@ class _MenuItemState extends State<MenuItem> {
                 Text(
                   widget.name,
                   style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)
-                      .copyWith(color: AppColors.darkGrey),
+                      ,
                 ),
                 Text(
                   widget.ingredients,
                   softWrap: true,
                   style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                      .copyWith(color: AppColors.darkGrey),
+                      ,
                 ),
                 Container(
                   margin: const EdgeInsets.only(
