@@ -33,7 +33,7 @@ class DishScreen extends StatelessWidget {
                     width: AppDimens.size_40,
                     height: AppDimens.size_40,
                     decoration: BoxDecoration(
-                      color: AppColors.orange,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(AppDimens.radius_20),
                     ),
                     child: IconButton(
@@ -84,14 +84,14 @@ class DishScreen extends StatelessWidget {
               child: Text(
                 '${_model.cost.toString()} \$',
                 style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
-                    .copyWith(color: AppColors.orange),
+                    .copyWith(color: Theme.of(context).primaryColor),
                 textAlign: TextAlign.center,
               ),
             ),
             Align(
                 child: GestureDetector(
               onTap: () {
-                AutoRouter.of(context).push(const SettingsRoute());
+                null;
               },
               child: const AddButton(),
             )),

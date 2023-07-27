@@ -4,7 +4,6 @@ import 'package:data/data.dart';
 import 'package:navigation/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/app/food_app.dart';
-import 'package:navigation/navigation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

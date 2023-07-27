@@ -41,14 +41,12 @@ class _MenuItemState extends State<MenuItem> {
               children: [
                 Text(
                   widget.name,
-                  style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)
-                      ,
+                  style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
                 ),
                 Text(
                   widget.ingredients,
                   softWrap: true,
-                  style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                      ,
+                  style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                 ),
                 Container(
                   margin: const EdgeInsets.only(
@@ -58,9 +56,9 @@ class _MenuItemState extends State<MenuItem> {
                     children: <Widget>[
                       Text(
                         '${widget.cost} \$',
-                        style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_14)
-                                .copyWith(color: AppColors.orange),
+                        style: GoogleFonts.poppins(
+                                textStyle: AppFonts.normal_14)
+                            .copyWith(color: Theme.of(context).primaryColor),
                       ),
                       Container(
                         width: AppDimens.size_30,

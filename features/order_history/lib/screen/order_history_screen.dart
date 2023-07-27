@@ -8,8 +8,7 @@ class OrderHistoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(AppConstants.orderHistoryTitle,
-          style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)
-              .copyWith(color: AppColors.darkGrey)),
+          style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)),
     );
   }
 }
