@@ -72,7 +72,7 @@ class WelcomeForm extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    AutoRouter.of(context).push(const MenuRoute());
+                    AutoRouter.of(context).push(const HomeRoute());
                   },
                   child: const GeneralButton(),
                 ),
