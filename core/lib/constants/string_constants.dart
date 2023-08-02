@@ -15,3 +15,8 @@ class AppConstants {
   static const String getStarted = 'Get Started';
   static const String addToCart = 'Add to Cart';
 }
+
+class HiveKeys {
+  static const String themeBox = 'AppTheme';
+  static const String themeKey = 'Theme';
+}

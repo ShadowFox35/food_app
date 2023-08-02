@@ -1,4 +1,5 @@
 import 'package:core_ui/core_ui.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
@@ -7,8 +8,10 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(AppConstants.cartTitle,
-          style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)),
+      child: Text(
+        AppConstants.cartTitle,
+        style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
+      ),
     );
   }
 }

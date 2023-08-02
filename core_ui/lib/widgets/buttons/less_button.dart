@@ -12,7 +12,6 @@ class LessButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppDimens.radius_30),
           border: Border.all(
             color: Theme.of(context).primaryColor,
-            width: 1.0,
           ),
         ),
         child: Center(

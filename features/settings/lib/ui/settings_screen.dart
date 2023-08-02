@@ -1,7 +1,8 @@
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
-import 'package:flutter/material.dart';
 import 'package:settings/bloc/settings_bloc.dart';
+
+import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -21,7 +22,7 @@ class SettingsScreen extends StatelessWidget {
         ),
       ),
       body: BlocBuilder<SettingsBloc, SettingsState>(
-        builder: (context, state) {
+        builder: (BuildContext context, SettingsState state) {
           return Container(
             padding: const EdgeInsets.all(AppDimens.padding_20),
             child: Column(

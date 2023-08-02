@@ -1,7 +1,9 @@
 import 'package:core_ui/core_ui.dart';
+import 'package:core/core.dart';
 import 'package:domain/domain.dart';
-import 'package:flutter/material.dart';
 import 'package:navigation/navigation.dart';
+
+import 'package:flutter/material.dart';
 
 import 'widget/dish_counter.dart';
 
@@ -54,29 +56,29 @@ class DishScreen extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: AppDimens.padding_25),
               margin: const EdgeInsets.only(top: AppDimens.padding_10),
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      _model.name,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    _model.name,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
+                  ),
+                  Text(
+                    _model.details,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: AppDimens.padding_10),
+                    child: Text(
+                      AppConstants.ingredients,
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
                     ),
-                    Text(
-                      _model.details,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: AppDimens.padding_10),
-                      child: Text(
-                        AppConstants.ingredients,
-                        style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_18),
-                      ),
-                    ),
-                    Text(
-                      _model.ingredients,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
-                    ),
-                  ]),
+                  ),
+                  Text(
+                    _model.ingredients,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
+                  ),
+                ],
+              ),
             ),
             const DishCounter(),
             Container(
@@ -89,12 +91,13 @@ class DishScreen extends StatelessWidget {
               ),
             ),
             Align(
-                child: GestureDetector(
-              onTap: () {
-                null;
-              },
-              child: const AddButton(),
-            )),
+              child: GestureDetector(
+                onTap: () {
+                  null;
+                },
+                child: const AddButton(),
+              ),
+            ),
           ],
         ),
       ),

@@ -1,9 +1,10 @@
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
-import 'package:flutter/material.dart';
 import 'package:navigation/navigation.dart';
 
 import 'menu_item.dart';
+
+import 'package:flutter/material.dart';
 
 class MenuList extends StatefulWidget {
   final List<MenuItemEntity> _itemModels;

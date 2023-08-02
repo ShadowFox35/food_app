@@ -1,4 +1,5 @@
 import 'package:core_ui/core_ui.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 class OrderHistoryScreen extends StatelessWidget {
@@ -7,8 +8,10 @@ class OrderHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(AppConstants.orderHistoryTitle,
-          style: GoogleFonts.poppins(textStyle: AppFonts.normal_18)),
+      child: Text(
+        AppConstants.orderHistoryTitle,
+        style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
+      ),
     );
   }
 }
