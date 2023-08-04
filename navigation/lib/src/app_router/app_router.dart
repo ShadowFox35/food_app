@@ -23,7 +23,6 @@ part 'app_router.gr.dart';
     ),
     AutoRoute(
       page: HomeScreen,
-      initial: true,
       path: 'home',
       children: [
         AutoRoute(
