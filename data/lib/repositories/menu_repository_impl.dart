@@ -1,6 +1,6 @@
 import 'package:data/mappers/menu_item_mapper.dart';
 import 'package:data/models/menu_item_model.dart';
-import 'package:data/providers/firebase_provider.dart';
+import 'package:data/providers/remote/firebase_provider.dart';
 import 'package:domain/domain.dart';
 
 class MenuItemRepository implements IMenuItemRepository {

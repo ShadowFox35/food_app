@@ -1,6 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:core/core.dart';
 import 'package:domain/domain.dart';
+
 import 'package:flutter/material.dart';
 
 import 'widget/dish_counter.dart';
@@ -33,7 +34,7 @@ class DishScreen extends StatelessWidget {
                     width: AppDimens.size_40,
                     height: AppDimens.size_40,
                     decoration: BoxDecoration(
-                      color: AppColors.orange,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(AppDimens.radius_20),
                     ),
                     child: IconButton(
@@ -54,33 +55,29 @@ class DishScreen extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: AppDimens.padding_25),
               margin: const EdgeInsets.only(top: AppDimens.padding_10),
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      _model.name,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
-                          .copyWith(color: AppColors.black),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    _model.name,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
+                  ),
+                  Text(
+                    _model.details,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: AppDimens.padding_10),
+                    child: Text(
+                      AppConstants.ingredients,
+                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
                     ),
-                    Text(
-                      _model.details,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                          .copyWith(color: AppColors.darkGrey),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: AppDimens.padding_10),
-                      child: Text(
-                        AppConstants.ingredients,
-                        style:
-                            GoogleFonts.poppins(textStyle: AppFonts.normal_18)
-                                .copyWith(color: AppColors.darkGrey),
-                      ),
-                    ),
-                    Text(
-                      _model.ingredients,
-                      style: GoogleFonts.poppins(textStyle: AppFonts.normal_16)
-                          .copyWith(color: AppColors.darkGrey),
-                    ),
-                  ]),
+                  ),
+                  Text(
+                    _model.ingredients,
+                    style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
+                  ),
+                ],
+              ),
             ),
             const DishCounter(),
             Container(
@@ -88,11 +85,18 @@ class DishScreen extends StatelessWidget {
               child: Text(
                 '${_model.cost.toString()} \$',
                 style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
-                    .copyWith(color: AppColors.orange),
+                    .copyWith(color: Theme.of(context).primaryColor),
                 textAlign: TextAlign.center,
               ),
             ),
-            const Align(child: AddButton()),
+            Align(
+              child: GestureDetector(
+                onTap: () {
+                  null;
+                },
+                child: const AddButton(),
+              ),
+            ),
           ],
         ),
       ),

@@ -10,16 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  auto_route: ^5.0.4
 
   core:
     path: ../../core
   core_ui:
     path: ../../core_ui
-  data:
-    path: ../../data
-  domain:
-    path: ../../domain
   navigation:
     path: ../../navigation
 
@@ -30,4 +25,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-

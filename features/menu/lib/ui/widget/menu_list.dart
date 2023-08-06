@@ -1,13 +1,15 @@
+import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
-import 'package:flutter/material.dart';
-import 'package:navigation/navigation.dart';
+import 'package:menu/bloc/menu_bloc.dart';
 
 import 'menu_item.dart';
 
+import 'package:flutter/material.dart';
+
 class MenuList extends StatefulWidget {
-  final List<MenuItemEntity> _itemModels;
-  const MenuList(this._itemModels, {super.key});
+  final List<MenuItemEntity> itemModels;
+  const MenuList(this.itemModels, {super.key});
 
   @override
   State<StatefulWidget> createState() => _MenuListState();
@@ -20,19 +22,20 @@ class _MenuListState extends State<MenuList> {
       body: Container(
         padding: const EdgeInsets.all(AppDimens.padding_25),
         child: ListView.separated(
-          itemCount: widget._itemModels.length,
+          itemCount: widget.itemModels.length,
           itemBuilder: (BuildContext context, int index) {
+            final MenuItemEntity menuItem = widget.itemModels[index];
             return GestureDetector(
               onTap: () {
-                AutoRouter.of(context).push(
-                  DishRoute(model: widget._itemModels[index]),
+                BlocProvider.of<MenuBloc>(context).add(
+                  NavigateToDishEvent(menuItem: menuItem),
                 );
               },
               child: MenuItem(
-                name: widget._itemModels[index].name,
-                ingredients: widget._itemModels[index].ingredients,
-                image: widget._itemModels[index].image,
-                cost: widget._itemModels[index].cost,
+                name: menuItem.name,
+                ingredients: menuItem.ingredients,
+                image: menuItem.image,
+                cost: menuItem.cost,
               ),
             );
           },

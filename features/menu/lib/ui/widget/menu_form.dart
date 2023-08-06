@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:menu/bloc/menu_bloc.dart';
-
-import 'menu_list.dart';
 import 'package:core/core.dart';
 import 'package:domain/domain.dart';
+
+import 'package:menu/bloc/menu_bloc.dart';
+import 'menu_list.dart';
+
+import 'package:flutter/material.dart';
 
 class MenuForm extends StatelessWidget {
   const MenuForm({super.key});
@@ -22,7 +23,12 @@ class MenuForm extends StatelessWidget {
               body: SafeArea(child: MenuList(state.dishesList)),
             );
           }
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+            child: CircularProgressIndicator(
+              valueColor:
+                  AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+            ),
+          );
         },
       ),
     );
