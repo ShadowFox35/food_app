@@ -9,19 +9,19 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter  
+    sdk: flutter
+
   core:
     path: ../core
   domain:
     path: ../domain
+    
   freezed: ^2.3.4
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.1
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   json_serializable: ^6.6.2
   build_runner: ^2.3.3
-

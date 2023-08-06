@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:core/core.dart';
 
 class GeneralButton extends StatelessWidget {
   const GeneralButton({super.key});
@@ -10,8 +11,8 @@ class GeneralButton extends StatelessWidget {
       width: AppDimens.size_335,
       height: AppDimens.size_50,
       decoration: BoxDecoration(
-        color: AppColors.orange,
-        borderRadius: BorderRadius.circular(10),
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.circular(AppDimens.radius_10),
       ),
       child: Center(
         child: Text(

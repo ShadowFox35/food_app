@@ -11,6 +11,7 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
     required GetMenuListUseCase getMenuListUsecase,
   })  : _getMenuListUsecase = getMenuListUsecase,
         super(const MenuState()) {
+    on<NavigateToDishEvent>(_onNavigateToDish);
     on<LoadMenuList>(_getMenu);
     add(LoadMenuList(0));
   }
@@ -29,5 +30,10 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
         state.copyWith(error: e, isLoading: false),
       );
     }
+  }
+
+  Future<void> _onNavigateToDish(
+      NavigateToDishEvent event, Emitter<MenuState> emit) async {
+    appLocator<AppRouter>().push(DishRoute(model: event.menuItem));
   }
 }

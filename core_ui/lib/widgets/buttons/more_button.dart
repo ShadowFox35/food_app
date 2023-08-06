@@ -9,15 +9,19 @@ class MoreButton extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: AppColors.lightGrey,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(AppDimens.radius_30),
           border: Border.all(
-            color: AppColors.grey,
-            width: 1.0,
+            color: Theme.of(context).primaryColor,
           ),
         ),
         child: Center(
-          child: SvgPicture.asset(ImagePaths.plusIcon),
+          child: SvgPicture.asset(
+            ImagePaths.plusIcon,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).primaryColor,
+              BlendMode.srcIn,
+            ),
+          ),
         ),
       ),
     );

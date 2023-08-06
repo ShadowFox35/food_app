@@ -1,3 +1,4 @@
 library settings;
 
-export 'screen/settings_screen.dart';
+export 'ui/settings_screen.dart';
+export 'bloc/settings_bloc.dart';

@@ -1,5 +1,7 @@
 part of 'menu_bloc.dart';
 
+abstract class MenuListState {}
+
 class MenuState {
   final bool isLoading;
   final List<MenuItemEntity> dishesList;

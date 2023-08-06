@@ -13,6 +13,11 @@ dependencies:
   flutter_svg: ^2.0.5
   google_fonts: ^3.0.1
 
+  core:
+    path: ../core
+  navigation:
+    path: ../navigation
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -21,10 +26,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
     - assets/icons/
-
-  # fonts:
-  #   - family: Poppins
-  #     fonts:
-  #       - asset: assets/fonts/Poppins-Regular.ttf
