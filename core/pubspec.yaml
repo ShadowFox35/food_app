@@ -10,10 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   data:
     path: ../data
   domain:
     path: ../domain
+  navigation:
+    path: ../navigation
 
   firebase_core: ^2.14.0
   flutter_bloc: ^8.1.3

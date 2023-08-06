@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:domain/domain.dart';
-import 'package:navigation/navigation.dart';
 import 'package:settings/settings.dart';
 
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class FoodApp extends StatefulWidget {
 }
 
 class _FoodAppState extends State<FoodApp> {
-  final _appRouter = AppRouter();
+  final _appRouter = appLocator.get<AppRouter>();
 
   @override
   Widget build(BuildContext context) {

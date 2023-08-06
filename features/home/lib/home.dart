@@ -1,3 +1,3 @@
 library home;
 
-export 'home/home_screen.dart';
+export './src/ui/home_screen.dart';

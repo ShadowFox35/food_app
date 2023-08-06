@@ -6,3 +6,8 @@ class LoadMenuList extends MenuEvent {
   final int page;
   LoadMenuList(this.page);
 }
+
+class NavigateToDishEvent extends MenuEvent {
+  final MenuItemEntity menuItem;
+  NavigateToDishEvent({required this.menuItem});
+}

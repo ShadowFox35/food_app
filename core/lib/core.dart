@@ -9,3 +9,5 @@ export 'package:core/config/firebase_options.dart';
 
 export 'package:core/di/app_di.dart';
 export 'package:core/constants/string_constants.dart';
+
+export 'package:navigation/navigation.dart';
