@@ -8,6 +8,11 @@ class LoadMenuList extends MenuEvent {
 }
 
 class NavigateToDishEvent extends MenuEvent {
-  final MenuItemEntity menuItem;
+  final DishEntity menuItem;
   NavigateToDishEvent({required this.menuItem});
+}
+
+class AddToCartEvent extends MenuEvent {
+  final DishEntity menuItem;
+  AddToCartEvent({required this.menuItem});
 }

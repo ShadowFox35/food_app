@@ -14,6 +14,7 @@ class MenuForm extends StatelessWidget {
     return BlocProvider<MenuBloc>(
       create: (BuildContext context) => MenuBloc(
         getMenuListUsecase: appLocator.get<GetMenuListUseCase>(),
+        saveItemsUsecase: appLocator.get<SaveItemsUseCase>(),
       ),
       child: BlocBuilder<MenuBloc, MenuState>(
         builder: (BuildContext context, MenuState state) {

@@ -8,8 +8,8 @@ import 'menu_item.dart';
 import 'package:flutter/material.dart';
 
 class MenuList extends StatefulWidget {
-  final List<MenuItemEntity> itemModels;
-  const MenuList(this.itemModels, {super.key});
+  final List<DishEntity> dishesList;
+  const MenuList(this.dishesList, {super.key});
 
   @override
   State<StatefulWidget> createState() => _MenuListState();
@@ -22,9 +22,9 @@ class _MenuListState extends State<MenuList> {
       body: Container(
         padding: const EdgeInsets.all(AppDimens.padding_25),
         child: ListView.separated(
-          itemCount: widget.itemModels.length,
+          itemCount: widget.dishesList.length,
           itemBuilder: (BuildContext context, int index) {
-            final MenuItemEntity menuItem = widget.itemModels[index];
+            final DishEntity menuItem = widget.dishesList[index];
             return GestureDetector(
               onTap: () {
                 BlocProvider.of<MenuBloc>(context).add(
@@ -32,10 +32,7 @@ class _MenuListState extends State<MenuList> {
                 );
               },
               child: MenuItem(
-                name: menuItem.name,
-                ingredients: menuItem.ingredients,
-                image: menuItem.image,
-                cost: menuItem.cost,
+                menuItem: widget.dishesList[index],
               ),
             );
           },

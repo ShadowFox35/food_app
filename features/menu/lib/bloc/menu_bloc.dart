@@ -6,13 +6,17 @@ part 'menu_event.dart';
 
 class MenuBloc extends Bloc<MenuEvent, MenuState> {
   final GetMenuListUseCase _getMenuListUsecase;
+  final SaveItemsUseCase _saveItemsUsecase;
 
   MenuBloc({
     required GetMenuListUseCase getMenuListUsecase,
+    required SaveItemsUseCase saveItemsUsecase,
   })  : _getMenuListUsecase = getMenuListUsecase,
+        _saveItemsUsecase = saveItemsUsecase,
         super(const MenuState()) {
     on<NavigateToDishEvent>(_onNavigateToDish);
     on<LoadMenuList>(_getMenu);
+    on<AddToCartEvent>(_addToCart);
     add(LoadMenuList(0));
   }
 
@@ -21,7 +25,7 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
       emit(
         state.copyWith(isLoading: true, error: null),
       );
-      final List<MenuItemEntity> dishes =
+      final List<DishEntity> dishes =
           await _getMenuListUsecase.execute(event.page);
       emit(state.copyWith(
           dishesList: [...state.dishesList, ...dishes], isLoading: false));
@@ -34,6 +38,16 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
 
   Future<void> _onNavigateToDish(
       NavigateToDishEvent event, Emitter<MenuState> emit) async {
-    appLocator<AppRouter>().push(DishRoute(model: event.menuItem));
+    appLocator<AppRouter>().push(DishRoute(entity: event.menuItem));
+  }
+
+  Future<void> _addToCart(AddToCartEvent event, Emitter<MenuState> emit) async {
+    _saveItemsUsecase.execute(
+      CartItemEntity(
+        count: 1,
+        dishEntity: event.menuItem,
+      ),
+    );
+    emit(state.copyWith(isAdded: true));
   }
 }

@@ -9,11 +9,11 @@ class HomeForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: const <PageRouteInfo>[
-        MenuRoute(),
-        CartRoute(),
-        OrderHistoryRoute(),
-        SettingsRoute(),
+      routes: <PageRouteInfo>[
+        const MenuRoute(),
+        CartRoute(cartList: const []),
+        const OrderHistoryRoute(),
+        const SettingsRoute(),
       ],
       animationDuration: Duration.zero,
       bottomNavigationBuilder: (BuildContext context, TabsRouter router) {

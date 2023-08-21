@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'widget/dish_counter.dart';
 
 class DishScreen extends StatelessWidget {
-  final MenuItemEntity _model;
+  final DishEntity dishEntity;
 
   const DishScreen({
     super.key,
-    required MenuItemEntity model,
-  }) : _model = model;
+    required DishEntity entity,
+  }) : dishEntity = entity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class DishScreen extends StatelessWidget {
             Stack(
               children: <Widget>[
                 Image.network(
-                  _model.image,
+                  dishEntity.image,
                   fit: BoxFit.fill,
                   width: MediaQuery.of(context).size.width,
                 ),
@@ -58,11 +58,11 @@ class DishScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _model.name,
+                    dishEntity.name,
                     style: GoogleFonts.poppins(textStyle: AppFonts.normal_20),
                   ),
                   Text(
-                    _model.details,
+                    dishEntity.details,
                     style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                   ),
                   Container(
@@ -73,7 +73,7 @@ class DishScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    _model.ingredients,
+                    dishEntity.ingredients,
                     style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                   ),
                 ],
@@ -83,7 +83,7 @@ class DishScreen extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(bottom: AppDimens.padding_20),
               child: Text(
-                '${_model.cost.toString()} \$',
+                '${dishEntity.cost.toString()} \$',
                 style: GoogleFonts.poppins(textStyle: AppFonts.normal_20)
                     .copyWith(color: Theme.of(context).primaryColor),
                 textAlign: TextAlign.center,

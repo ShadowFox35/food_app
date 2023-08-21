@@ -1,18 +1,28 @@
+import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
+import 'package:menu/bloc/menu_bloc.dart';
 
 class MenuItem extends StatefulWidget {
-  final String name;
-  final String ingredients;
-  final String image;
-  final double cost;
+  final DishEntity menuItem;
+
+  // final String name;
+  // final String ingredients;
+  // final String image;
+  // final double cost;
+
+  // const MenuItem({
+  //   required this.name,
+  //   required this.ingredients,
+  //   required this.image,
+  //   required this.cost,
+  //   super.key,
+  // });
 
   const MenuItem({
-    required this.name,
-    required this.ingredients,
-    required this.image,
-    required this.cost,
     super.key,
+    required this.menuItem,
   });
 
   @override
@@ -22,6 +32,8 @@ class MenuItem extends StatefulWidget {
 class _MenuItemState extends State<MenuItem> {
   @override
   Widget build(BuildContext context) {
+    final menuItem = widget.menuItem;
+
     return Row(
       children: <Widget>[
         SizedBox(
@@ -29,7 +41,7 @@ class _MenuItemState extends State<MenuItem> {
           height: AppDimens.size_110,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(AppDimens.radius_10),
-            child: Image.network(widget.image),
+            child: Image.network(menuItem.image),
           ),
         ),
         Expanded(
@@ -40,11 +52,11 @@ class _MenuItemState extends State<MenuItem> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  widget.name,
+                  menuItem.name,
                   style: GoogleFonts.poppins(textStyle: AppFonts.normal_18),
                 ),
                 Text(
-                  widget.ingredients,
+                  menuItem.ingredients,
                   softWrap: true,
                   style: GoogleFonts.poppins(textStyle: AppFonts.normal_16),
                 ),
@@ -55,7 +67,7 @@ class _MenuItemState extends State<MenuItem> {
                   child: Row(
                     children: <Widget>[
                       Text(
-                        '${widget.cost} \$',
+                        '${menuItem.cost} \$',
                         style: GoogleFonts.poppins(
                                 textStyle: AppFonts.normal_14)
                             .copyWith(color: Theme.of(context).primaryColor),
@@ -66,9 +78,13 @@ class _MenuItemState extends State<MenuItem> {
                         margin:
                             const EdgeInsets.only(left: AppDimens.padding_10),
                         child: ElevatedButton(
-                          onPressed: null,
+                          onPressed: () {
+                            BlocProvider.of<MenuBloc>(context)
+                                .add(AddToCartEvent(menuItem: menuItem));
+                          },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.zero,
+                            backgroundColor: Theme.of(context).primaryColor,
                           ),
                           child: const Icon(
                             Icons.add,

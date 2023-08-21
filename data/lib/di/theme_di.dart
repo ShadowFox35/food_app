@@ -8,12 +8,7 @@ final ThemeDI themeDI = ThemeDI();
 
 class ThemeDI {
   Future<void> initDependencies() async {
-    _initHive();
     _initTheme();
-  }
-
-  void _initHive() {
-    appLocator.registerLazySingleton<HiveProvider>(() => HiveProvider());
   }
 
   void _initTheme() {

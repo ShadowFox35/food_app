@@ -10,12 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
   core:
     path: ../core
   domain:
     path: ../domain
-    
+
   freezed: ^2.3.4
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.1
@@ -25,3 +27,4 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^6.6.2
   build_runner: ^2.3.3
+  hive_generator: ^2.0.0

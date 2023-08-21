@@ -19,4 +19,6 @@ class AppConstants {
 class HiveKeys {
   static const String themeBox = 'AppTheme';
   static const String themeKey = 'Theme';
+
+  static const String cartBox = 'AppCart';
 }

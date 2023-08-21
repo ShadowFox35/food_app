@@ -1,3 +1,3 @@
 library cart;
 
-export 'screen/cart_screen.dart';
+export './src/ui/cart_screen.dart';
